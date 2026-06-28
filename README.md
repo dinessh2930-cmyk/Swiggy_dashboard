@@ -23,7 +23,19 @@ This Power BI dashboard provides insights into Swiggy's restaurant performance, 
 - Excel
 
 ## Dashboard Preview
+# Swiggy Power BI Dashboard
 
 
-## Author
-Dinesh
+### Overview
+![Overview](swiggy-page1.png)
+
+### Restaurants Analysis
+![Restaurants Analysis](swiggy-page2.png)
+
+### Customer Analysis
+![Customer Analysis](swiggy-page3.png)
+
+### Geography Analysis
+![Geography Analysis](swiggy-page4.png)
+
+
