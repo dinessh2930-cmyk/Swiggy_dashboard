@@ -1,0 +1,62 @@
+-- Total Orders
+SELECT COUNT(*) AS Total_Orders
+FROM orders;
+
+-- Total Revenue
+SELECT SUM(order_amount) AS Total_Revenue
+FROM orders;
+
+-- Average Order Value
+SELECT AVG(order_amount) AS Average_Order_Value
+FROM orders;
+
+-- Top 10 Restaurants by Orders
+SELECT restaurant_name,
+       COUNT(*) AS Total_Orders
+FROM orders
+GROUP BY restaurant_name
+ORDER BY Total_Orders DESC
+LIMIT 10;
+
+-- Top 10 Restaurants by Revenue
+SELECT restaurant_name,
+       SUM(order_amount) AS Revenue
+FROM orders
+GROUP BY restaurant_name
+ORDER BY Revenue DESC
+LIMIT 10;
+
+-- Orders by City
+SELECT city,
+       COUNT(*) AS Total_Orders
+FROM orders
+GROUP BY city
+ORDER BY Total_Orders DESC;
+
+-- Revenue by City
+SELECT city,
+       SUM(order_amount) AS Revenue
+FROM orders
+GROUP BY city
+ORDER BY Revenue DESC;
+
+-- Average Restaurant Rating
+SELECT restaurant_name,
+       AVG(rating) AS Average_Rating
+FROM orders
+GROUP BY restaurant_name
+ORDER BY Average_Rating DESC;
+
+-- Customer-wise Total Spending
+SELECT customer_id,
+       SUM(order_amount) AS Total_Spent
+FROM orders
+GROUP BY customer_id
+ORDER BY Total_Spent DESC;
+
+-- Monthly Revenue Trend
+SELECT MONTH(order_date) AS Month,
+       SUM(order_amount) AS Revenue
+FROM orders
+GROUP BY MONTH(order_date)
+ORDER BY Month;
